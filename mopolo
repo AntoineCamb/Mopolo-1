@@ -2336,42 +2336,44 @@ FIELDS TERMINATED BY ';'
 	typeAliment)
 
 /*
+
 3.2 Divers requêtes
 1) Ecrire une requête SQL qui permet de visualiser l’ensemble des fichiers qui
 composent votre base
 */
+
 SELECT file_name from dba_data_files;
-/*
-/u03/app/oracle/oradata/ORCL/system02.dbf
-/u02/app/oracle/oradata/ORCL/system01.dbf
-/u03/app/oracle/oradata/ORCL/sysaux02.dbf
-/u02/app/oracle/oradata/ORCL/sysaux01.dbf
-/u02/app/oracle/oradata/ORCL/undotbs01.dbf
-/u03/app/oracle/oradata/ORCL/users02.dbf
-/u02/app/oracle/oradata/ORCL/users01.dbf
-/u02/app/oracle/oradata/ORCL/example01.dbf
-/u02/app/oracle/oradata/SP341428920_ias_opss.dbf
-/u02/app/oracle/oradata/SP341428920_mds.dbf
-/u02/app/oracle/oradata/SP341428920_wlsservices.dbf
-/u02/app/oracle/oradata/SP341428920_iau.dbf
-/u02/app/oracle/oradata/SP341428920_svctbl.dbf
-/u02/app/oracle/oradata/SP341428920_UMS.dbf
-/u02/app/oracle/oradata/SP598528613_UMS.dbf
-/u02/app/oracle/oradata/SP598528613_ias_opss.dbf
-/u02/app/oracle/oradata/SP598528613_svctbl.dbf
-/u02/app/oracle/oradata/SP598528613_mds.dbf
-/u02/app/oracle/oradata/SP598528613_iau.dbf
-/u02/app/oracle/oradata/SP598528613_wlsservices.dbf
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_table_res_1.dbf
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_index_res_1.dbf
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_lob_res_1.dbf
-/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tsrman_fz5l0x6b_.dbf
-/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tbs_inde_g4cwjpd0_.dbf
-/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tstables_g514dp57_.dbf
-/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tsindexe_g514ds1f_.dbf
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradatadata_tables.dbf
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradatadata_indexes.dbf
-*/
+	/*
+	/u03/app/oracle/oradata/ORCL/system02.dbf
+	/u02/app/oracle/oradata/ORCL/system01.dbf
+	/u03/app/oracle/oradata/ORCL/sysaux02.dbf
+	/u02/app/oracle/oradata/ORCL/sysaux01.dbf
+	/u02/app/oracle/oradata/ORCL/undotbs01.dbf
+	/u03/app/oracle/oradata/ORCL/users02.dbf
+	/u02/app/oracle/oradata/ORCL/users01.dbf
+	/u02/app/oracle/oradata/ORCL/example01.dbf
+	/u02/app/oracle/oradata/SP341428920_ias_opss.dbf
+	/u02/app/oracle/oradata/SP341428920_mds.dbf
+	/u02/app/oracle/oradata/SP341428920_wlsservices.dbf
+	/u02/app/oracle/oradata/SP341428920_iau.dbf
+	/u02/app/oracle/oradata/SP341428920_svctbl.dbf
+	/u02/app/oracle/oradata/SP341428920_UMS.dbf
+	/u02/app/oracle/oradata/SP598528613_UMS.dbf
+	/u02/app/oracle/oradata/SP598528613_ias_opss.dbf
+	/u02/app/oracle/oradata/SP598528613_svctbl.dbf
+	/u02/app/oracle/oradata/SP598528613_mds.dbf
+	/u02/app/oracle/oradata/SP598528613_iau.dbf
+	/u02/app/oracle/oradata/SP598528613_wlsservices.dbf
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_table_res_1.dbf
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_index_res_1.dbf
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_lob_res_1.dbf
+	/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tsrman_fz5l0x6b_.dbf
+	/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tbs_inde_g4cwjpd0_.dbf
+	/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tstables_g514dp57_.dbf
+	/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tsindexe_g514ds1f_.dbf
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradatadata_tables.dbf
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradatadata_indexes.dbf
+	*/
 
 /*
 2) Ecrire une requête SQL qui permet de lister en une requête l’ensembles des
@@ -2379,37 +2381,170 @@ tablespaces avec leur fichiers. La taille de chaque fichier doit apparaître, le
 total de l’espace occupé par fichier ainsi que le volume total de l’espace libre par
 fichier
 */
+
 SELECT file_name, tablespace_name, bytes, maxbytes, maxbytes - bytes FROM dba_data_files;
+	/*
+	/u03/app/oracle/oradata/ORCL/system02.dbf	SYSTEM	314572800	2147483648	1832910848
+	/u02/app/oracle/oradata/ORCL/system01.dbf	SYSTEM	4278190080	34359721984	30081531904
+	/u03/app/oracle/oradata/ORCL/sysaux02.dbf	SYSAUX	314572800	2147483648	1832910848
+	/u02/app/oracle/oradata/ORCL/sysaux01.dbf	SYSAUX	964689920	34359721984	33395032064
+	/u02/app/oracle/oradata/ORCL/undotbs01.dbf	UNDOTBS1	10249830400	34359721984	24109891584
+	/u03/app/oracle/oradata/ORCL/users02.dbf	USERS	314572800	2147483648	1832910848
+	/u02/app/oracle/oradata/ORCL/users01.dbf	USERS	7897088000	34359721984	26462633984
+	/u02/app/oracle/oradata/ORCL/example01.dbf	EXAMPLE	363069440	34359721984	33996652544
+	/u02/app/oracle/oradata/SP341428920_ias_opss.dbf	SP341428920_IAS_OPSS	62914560	34359721984	34296807424
+	/u02/app/oracle/oradata/SP341428920_mds.dbf	SP341428920_MDS	104857600	1048576000	943718400
+	/u02/app/oracle/oradata/SP341428920_wlsservices.dbf	SP341428920_WLS	62914560	34359721984	34296807424
+	/u02/app/oracle/oradata/SP341428920_iau.dbf	SP341428920_IAU	62914560	34359721984	34296807424
+	/u02/app/oracle/oradata/SP341428920_svctbl.dbf	SP341428920_STB	10485760	34359721984	34349236224
+	/u02/app/oracle/oradata/SP341428920_UMS.dbf	SP341428920_IAS_UMS	104857600	34359721984	34254864384
+	/u02/app/oracle/oradata/SP598528613_UMS.dbf	SP598528613_IAS_UMS	104857600	34359721984	34254864384
+	/u02/app/oracle/oradata/SP598528613_ias_opss.dbf	SP598528613_IAS_OPSS	62914560	34359721984	34296807424
+	/u02/app/oracle/oradata/SP598528613_svctbl.dbf	SP598528613_STB	10485760	34359721984	34349236224
+	/u02/app/oracle/oradata/SP598528613_mds.dbf	SP598528613_MDS	104857600	1048576000	943718400
+	/u02/app/oracle/oradata/SP598528613_iau.dbf	SP598528613_IAU	62914560	34359721984	34296807424
+	/u02/app/oracle/oradata/SP598528613_wlsservices.dbf	SP598528613_WLS	62914560	34359721984	34296807424
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_table_res_1.dbf	TS_TABLE_RES	10485760	0	-10485760
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_index_res_1.dbf	TS_INDEX_RES	10485760	0	-10485760
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_lob_res_1.dbf	TS_LOB_RES	10485760	0	-10485760
+	/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tsrman_fz5l0x6b_.dbf	TSRMAN	104857600	34359721984	34254864384
+	/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tbs_inde_g4cwjpd0_.dbf	TBS_INDEXES	104857600	34359721984	34254864384
+	/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tstables_g514dp57_.dbf	TSTABLES	27262976	34359721984	34332459008
+	/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tsindexe_g514ds1f_.dbf	TSINDEXES	9437184	34359721984	34350284800
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradatadata_tables.dbf	TABLE_SPACE_DATA_TABLES	8388608	0	-8388608
+	/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradatadata_indexes.dbf	TABLE_SPACE_DATA_INDEXES	2097152	0	-2097152
+	*/
+
 /*
-/u03/app/oracle/oradata/ORCL/system02.dbf	SYSTEM	314572800	2147483648	1832910848
-/u02/app/oracle/oradata/ORCL/system01.dbf	SYSTEM	4278190080	34359721984	30081531904
-/u03/app/oracle/oradata/ORCL/sysaux02.dbf	SYSAUX	314572800	2147483648	1832910848
-/u02/app/oracle/oradata/ORCL/sysaux01.dbf	SYSAUX	964689920	34359721984	33395032064
-/u02/app/oracle/oradata/ORCL/undotbs01.dbf	UNDOTBS1	10249830400	34359721984	24109891584
-/u03/app/oracle/oradata/ORCL/users02.dbf	USERS	314572800	2147483648	1832910848
-/u02/app/oracle/oradata/ORCL/users01.dbf	USERS	7897088000	34359721984	26462633984
-/u02/app/oracle/oradata/ORCL/example01.dbf	EXAMPLE	363069440	34359721984	33996652544
-/u02/app/oracle/oradata/SP341428920_ias_opss.dbf	SP341428920_IAS_OPSS	62914560	34359721984	34296807424
-/u02/app/oracle/oradata/SP341428920_mds.dbf	SP341428920_MDS	104857600	1048576000	943718400
-/u02/app/oracle/oradata/SP341428920_wlsservices.dbf	SP341428920_WLS	62914560	34359721984	34296807424
-/u02/app/oracle/oradata/SP341428920_iau.dbf	SP341428920_IAU	62914560	34359721984	34296807424
-/u02/app/oracle/oradata/SP341428920_svctbl.dbf	SP341428920_STB	10485760	34359721984	34349236224
-/u02/app/oracle/oradata/SP341428920_UMS.dbf	SP341428920_IAS_UMS	104857600	34359721984	34254864384
-/u02/app/oracle/oradata/SP598528613_UMS.dbf	SP598528613_IAS_UMS	104857600	34359721984	34254864384
-/u02/app/oracle/oradata/SP598528613_ias_opss.dbf	SP598528613_IAS_OPSS	62914560	34359721984	34296807424
-/u02/app/oracle/oradata/SP598528613_svctbl.dbf	SP598528613_STB	10485760	34359721984	34349236224
-/u02/app/oracle/oradata/SP598528613_mds.dbf	SP598528613_MDS	104857600	1048576000	943718400
-/u02/app/oracle/oradata/SP598528613_iau.dbf	SP598528613_IAU	62914560	34359721984	34296807424
-/u02/app/oracle/oradata/SP598528613_wlsservices.dbf	SP598528613_WLS	62914560	34359721984	34296807424
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_table_res_1.dbf	TS_TABLE_RES	10485760	0	-10485760
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_index_res_1.dbf	TS_INDEX_RES	10485760	0	-10485760
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradataorcltsobjts_lob_res_1.dbf	TS_LOB_RES	10485760	0	-10485760
-/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tsrman_fz5l0x6b_.dbf	TSRMAN	104857600	34359721984	34254864384
-/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tbs_inde_g4cwjpd0_.dbf	TBS_INDEXES	104857600	34359721984	34254864384
-/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tstables_g514dp57_.dbf	TSTABLES	27262976	34359721984	34332459008
-/u02/app/oracle/oradata/ORCL/datafile/o1_mf_tsindexe_g514ds1f_.dbf	TSINDEXES	9437184	34359721984	34350284800
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradatadata_tables.dbf	TABLE_SPACE_DATA_TABLES	8388608	0	-8388608
-/u01/app/oracle/product/11.2.0/dbhome_1/dbs/%ORACLE_BASE%oradatadata_indexes.dbf	TABLE_SPACE_DATA_INDEXES	2097152	0	-2097152
+3) Ecrire une requête SQL qui permet de lister les segments et leurs extensions de
+chacun des segments (tables ou indexes) de votre utilisateur
 */
 
+SELECT segment_name, segment_type Type, tablespace_name, extents FROM user_segments
+	/*
+	ALIMENT		TABLE	TABLE_SPACE_DATA_TABLES	1
+	STORELISTREFALISA	NESTED TABLE	TABLE_SPACE_DATA_TABLES	1
+	STORELISTREFMENUSA	NESTED TABLE	TABLE_SPACE_DATA_TABLES	1
+	CREPE_SALEE	TABLE	TABLE_SPACE_DATA_TABLES	1
+	STORELISTREFALISU	NESTED TABLE	TABLE_SPACE_DATA_TABLES	1
+	STORELISTREFMENUSU	NESTED TABLE	TABLE_SPACE_DATA_TABLES	1
+	CREPE_SUCREE	TABLE	TABLE_SPACE_DATA_TABLES	1
+	STORELISTREFALIFO	NESTED TABLE	TABLE_SPACE_DATA_TABLES	1
+	FOURNISSEUR	TABLE	TABLE_SPACE_DATA_TABLES	1
+	STORELISTREFMENUCIDRE	NESTED TABLE	TABLE_SPACE_DATA_TABLES	1
+	CIDRE	TABLE	TABLE_SPACE_DATA_TABLES	2
+	STORELISTREFDATESMENU	NESTED TABLE	TABLE_SPACE_DATA_TABLES	1
+	MENU	TABLE	TABLE_SPACE_DATA_TABLES	1
+	DATE_MENU	TABLE	TABLE_SPACE_DATA_TABLES	3
+	PK_ALIMENT_IDALIMENT	INDEX	TABLE_SPACE_DATA_INDEXES	1
+	SYS_C0081699	INDEX	TABLE_SPACE_DATA_TABLES	1
+	UC_ALIMENT	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_IL0000207645C00005$$	LOBINDEX	TABLE_SPACE_DATA_TABLES	1
+	PK_CREPE_SALEE_IDCREPE	INDEX	TABLE_SPACE_DATA_INDEXES	1
+	SYS_C0081704	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_C0081705	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_C0081706	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_FK0000207645N00008$	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_FK0000207645N00006$	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_IL0000207656C00005$$	LOBINDEX	TABLE_SPACE_DATA_TABLES	1
+	PK_CREPE_SUCREE_IDCREPE	INDEX	TABLE_SPACE_DATA_INDEXES	1
+	SYS_C0081708	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_C0081709	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_C0081710	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_FK0000207656N00008$	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_FK0000207656N00006$	INDEX	TABLE_SPACE_DATA_TABLES	1
+	PK_FOURNISSEUR_IDFOURNISSEUR	INDEX	TABLE_SPACE_DATA_INDEXES	1
+	SYS_C0081714	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_C0081715	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_FK0000207667N00007$	INDEX	TABLE_SPACE_DATA_TABLES	1
+	PK_CIDRE_IDCIDRE	INDEX	TABLE_SPACE_DATA_INDEXES	1
+	SYS_C0081720	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_C0081721	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_FK0000207673N00007$	INDEX	TABLE_SPACE_DATA_TABLES	1
+	PK_MENU_IDMENU	INDEX	TABLE_SPACE_DATA_INDEXES	1
+	SYS_C0081724	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_C0081725	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_FK0000207679N00008$	INDEX	TABLE_SPACE_DATA_TABLES	1
+	PK_DATE_MENU_DATEJOUR	INDEX	TABLE_SPACE_DATA_INDEXES	1
+	SYS_C0081727	INDEX	TABLE_SPACE_DATA_TABLES	1
+	SYS_LOB0000207645C00005$$	LOBSEGMENT	TABLE_SPACE_DATA_TABLES	1
+	SYS_LOB0000207656C00005$$	LOBSEGMENT	TABLE_SPACE_DATA_TABLES	1
+	*/
 
+/*
+4) Ecrire une requête qui permet pour chacun de vos segments de donner le nombre
+total de blocs du segment, le nombre de blocs utilisés et le nombre de blocs libres
+*/
+
+SELECT sum(blocks) as Nombre_blocks, avg(blocks) as Moyenne_blocks_libres FROM dba_segments;
+	-- 1645920	145,296610169491525423728813559322033898
+
+/*
+5) Ecrire une requête SQL qui permet de compacter et réduire un segment
+*/
+
+ALTER TABLE Aliment enable row movement;
+	-- Table ALIMENT modifié(e).
+ALTER TABLE Aliment SHRINK SPACE cascade
+	-- Table ALIMENT modifié(e).
+
+/*
+6) Ecrire une requête qui permet d’afficher l’ensemble des utilisateurs de votre base et
+leurs droits
+*/
+
+SELECT username,granted_role,admin_option FROM user_role_privs;
+	/*
+	ESCAMBERABERO2B18	RL_COURS_ADMIN	NO
+	ESCAMBERABERO2B18	RL_COURS_SQL	NO
+	*/
+
+/*
+7) Proposer trois requêtes libres au choix de recherche d’objets dans le dictionnaire
+Oracle
+*/
+
+SELECT table_name, pct_free FROM user_tables 
+	/*
+	STORELISTREFALISA	10
+	STORELISTREFMENUSA	10
+	STORELISTREFALISU	10
+	STORELISTREFMENUSU	10
+	STORELISTREFALIFO	10
+	STORELISTREFMENUCIDRE	10
+	STORELISTREFDATESMENU	10
+	*/
+	
+DESCRIBE DBA_USERS
+	/*
+	Nom                         NULL ?   Type           
+	--------------------------- -------- -------------- 
+	USERNAME                   NOT NULL VARCHAR2(30)  
+	USER_ID                    NOT NULL NUMBER        
+	PASSWORD                            VARCHAR2(30)  
+	ACCOUNT_STATUS             NOT NULL VARCHAR2(32)  
+	LOCK_DATE                           DATE          
+	EXPIRY_DATE                         DATE          
+	DEFAULT_TABLESPACE         NOT NULL VARCHAR2(30)  
+	TEMPORARY_TABLESPACE       NOT NULL VARCHAR2(30)  
+	CREATED                    NOT NULL DATE          
+	PROFILE                    NOT NULL VARCHAR2(30)  
+	INITIAL_RSRC_CONSUMER_GROUP          VARCHAR2(30)  
+	EXTERNAL_NAME                       VARCHAR2(4000) 
+	PASSWORD_VERSIONS                   VARCHAR2(8)   
+	EDITIONS_ENABLED                    VARCHAR2(1)   
+	AUTHENTICATION_TYPE                 VARCHAR2(8)   
+	*/
+	
+-- Pour avoir la liste des tables système
+SELECT TABLE_NAME FROM DBA_TABLES WHERE TABLE_NAME LIKE '%$';
+	/*
+	ICOL$
+	IND$
+	COL$
+	CLU$
+	TAB$
+	LOB$
+	COLTYPE$
+	-- 510 lignes
+	*/
